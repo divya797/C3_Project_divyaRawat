@@ -64,5 +64,17 @@ class RestaurantTest {
     	setUpAddMenu();
         assertThrows(itemNotFoundException.class,()->restaurant.removeFromMenu("French fries"));
     }
+    
+    //TODO
+    //When adding item from the list, it should return the total amount
+    
+    @Test
+    public void adding_items_should_return_the_total_amount(){
+    	setUpAddMenu();
+    	String[] itemsName= {"Sweet corn soup","Vegetable lasagne"};  //sending a list of selected items as string
+    	int orderTotal= restaurant.getOrderTotal(itemsName); //get the total amount of selected items
+    	assertEquals(388,orderTotal);
+    }
+    
     //<<<<<<<<<<<<<<<<<<<<<<<MENU>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 }
